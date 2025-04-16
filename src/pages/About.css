@@ -1,0 +1,92 @@
+/* About.css - About 元件的樣式 */
+
+.about-section {
+    padding: 40px 20px; /* 上下 40px，左右 20px 的內距 */
+    background-color: #f9f9f9; /* 給區塊一個淺灰色背景，方便區分 */
+    border-bottom: 1px solid #eee; /* 區塊間的分隔線 */
+    text-align: center; /* 讓標題置中 */
+  }
+  
+  .about-section h2 {
+    font-size: 2em; /* 標題字體放大 */
+    margin-bottom: 30px; /* 標題和內容間的距離 */
+    color: #333;
+  }
+  
+  .about-content {
+    display: flex; /* 使用 Flexbox 佈局照片和文字 (如果加了照片) */
+    flex-direction: column; /* 手機上先垂直排列 */
+    align-items: center; /* 讓內容水平置中 */
+    text-align: left; /* 文字內容靠左對齊 */
+    max-width: 800px; /* 限制內容最大寬度 */
+    margin: 0 auto 30px auto; /* 水平置中，並與技能列表間隔 */
+  }
+  
+  /* 如果你加了照片，可以取消下面這段註解 */
+  /*
+  .profile-picture-container {
+    margin-bottom: 20px;
+  }
+  
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; // 圓形照片
+    object-fit: cover; // 確保圖片不變形
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  */
+  
+  .bio p {
+    line-height: 1.6; /* 行高，讓文字更易讀 */
+    margin-bottom: 15px; /* 段落間距 */
+    color: #555;
+  }
+  
+  .skills-section {
+    margin-top: 30px;
+  }
+  
+  .skills-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #444;
+  }
+  
+  .skills-list {
+    list-style: none; /* 移除列表的點點 */
+    padding: 0;
+    display: flex; /* 讓技能橫向排列 */
+    flex-wrap: wrap; /* 空間不夠時換行 */
+    justify-content: center; /* 技能標籤置中 */
+  }
+  
+  .skills-list li {
+    background-color: #e0e0e0; /* 技能標籤背景色 */
+    color: #333; /* 文字顏色 */
+    padding: 8px 15px; /* 內距 */
+    margin: 5px; /* 外距 */
+    border-radius: 15px; /* 圓角 */
+    font-size: 0.9em;
+  }
+  
+  /* RWD: 在較大螢幕上，可以讓照片和文字並排 */
+  @media (min-width: 768px) {
+    .about-content {
+      flex-direction: row; /* 螢幕較寬時，改為水平排列 */
+      text-align: left; /* 文字靠左 */
+    }
+  
+    /* 如果加了照片，調整照片容器 */
+    /*
+    .profile-picture-container {
+      margin-right: 30px; // 照片和文字間的距離
+      margin-bottom: 0;
+    }
+    */
+  
+    .bio {
+      flex: 1; /* 讓文字部分佔據剩餘空間 */
+    }
+  }
