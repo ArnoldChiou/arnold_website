@@ -10,7 +10,7 @@ import Portfolio from './pages/Portfolio';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
-import './App.css';
+import './styles/global.css';
 
 const PageTitleUpdater = () => {
   const location = useLocation();

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css';
+import '../styles/components/Header.css';
 
 // 定義 Props 的型別 (如果需要從父元件接收資料)
 interface HeaderProps {
