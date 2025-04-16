@@ -1,54 +1,136 @@
-# React + TypeScript + Vite
+# Arnold's Personal Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+這是一個使用現代前端技術棧構建的個人網站專案，採用 React、TypeScript 和 Vite 作為主要技術。
 
-Currently, two official plugins are available:
+## 🚀 技術棧
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 18** - 用於構建用戶界面
+- **TypeScript** - 提供類型安全和更好的開發體驗
+- **Vite** - 快速的前端構建工具
+- **ESLint** - 代碼質量檢查
+- **SWC** - 用於快速開發和構建
 
-## Expanding the ESLint configuration
+## 📦 安裝
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+確保你的系統已安裝 Node.js (建議版本 18.0.0 或更高)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
+1. 克隆專案
+```bash
+git clone [your-repository-url]
+cd arnold_website
+```
+
+2. 安裝依賴
+```bash
+npm install
+```
+
+3. 啟動開發服務器
+```bash
+npm run dev
+```
+
+4. 構建生產版本
+```bash
+npm run build
+```
+
+## 🛠️ 開發指南
+
+### 專案結構
+
+```
+arnold_website/
+├── public/          # 靜態資源
+├── src/             # 源代碼
+│   ├── components/  # React 組件
+│   ├── pages/       # 頁面組件
+│   ├── styles/      # 樣式文件
+│   ├── utils/       # 工具函數
+│   ├── App.tsx      # 主應用組件
+│   └── main.tsx     # 入口文件
+├── .gitignore       # Git 忽略文件
+├── index.html       # HTML 模板
+├── package.json     # 專案配置
+├── tsconfig.json    # TypeScript 配置
+├── tsconfig.node.json # Node 環境 TypeScript 配置
+└── vite.config.ts   # Vite 配置
+```
+
+### 代碼規範
+
+專案使用 ESLint 進行代碼質量檢查，主要規則包括：
+
+- TypeScript 類型檢查
+- React 最佳實踐
+- 代碼風格一致性
+
+### 開發工作流
+
+1. 創建新功能分支
+```bash
+git checkout -b feature/your-feature-name
+```
+
+2. 提交更改
+```bash
+git add .
+git commit -m "feat: add new feature"
+```
+
+3. 推送到遠程
+```bash
+git push origin feature/your-feature-name
+```
+
+## 🔧 配置說明
+
+### TypeScript 配置
+
+專案使用兩個 TypeScript 配置文件：
+
+- `tsconfig.json` - 主配置文件，用於應用程序代碼
+- `tsconfig.node.json` - 用於 Vite 配置文件的 TypeScript 配置
+
+### Vite 配置
+
+Vite 配置使用 SWC 插件進行快速開發和構建：
+
+```typescript
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+
+export default defineConfig({
+  plugins: [react()],
 })
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📚 文檔
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [React 官方文檔](https://react.dev/)
+- [TypeScript 手冊](https://www.typescriptlang.org/docs/)
+- [Vite 文檔](https://vitejs.dev/guide/)
+- [ESLint 配置指南](https://eslint.org/docs/latest/use/configure/)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🤝 貢獻指南
+
+1. Fork 本專案
+2. 創建你的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交你的更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 開啟一個 Pull Request
+
+## 📝 許可證
+
+本專案採用 MIT 許可證 - 詳見 [LICENSE](LICENSE) 文件
+
+## 📞 聯繫方式
+
+如有任何問題或建議，請通過以下方式聯繫：
+
+- Email: [your-email@example.com]
+- GitHub: [your-github-profile]
+
+---
+
+感謝你的關注和支持！🎉
