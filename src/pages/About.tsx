@@ -1,13 +1,11 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 import '../styles/pages/About.css';
 
 const About: React.FC = () => {
   return (
     <>
-      <Helmet>
-        <title>Arnold's Portfolio | 關於我</title>
-      </Helmet>
+      <title>Arnold's Portfolio | 關於我</title>
       <div className="about-page">
         <h1>關於我</h1>
         <p>我們是一個專注於提供高質量服務的團隊。</p>
