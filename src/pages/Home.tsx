@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import '../styles/pages/home.css';
+import '../styles/pages/Home.css';
 
 const LazyImage: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = ({ src, alt, ...rest }) => {
   const imgRef = useRef<HTMLImageElement | null>(null);

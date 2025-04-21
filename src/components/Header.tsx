@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
             <li><Link to="/about" onClick={closeMenu}>關於我們</Link></li>
             <li><Link to="/services" onClick={closeMenu}>服務項目</Link></li>
             <li><Link to="/portfolio" onClick={closeMenu}>作品集</Link></li>
-            <li><Link to="/blog" onClick={closeMenu}>部落格</Link></li>
+            <li><Link to="/blog" onClick={closeMenu}>新聞</Link></li>
             <li><Link to="/contact" onClick={closeMenu}>聯絡我們</Link></li>
           </ul>
         </nav>
