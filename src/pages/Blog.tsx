@@ -1,6 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/pages/Blog.css';
 
+// Define the Article interface
+interface Article {
+  source?: {
+    name?: string;
+  };
+  author?: string;
+  title?: string;
+  description?: string;
+  url?: string;
+  urlToImage?: string;
+  publishedAt?: string;
+  content?: string;
+}
+
 const Blog: React.FC = () => {
   const [articles, setArticles] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -21,7 +35,12 @@ const Blog: React.FC = () => {
           setError('新聞資料格式錯誤');
           setArticles([]);
         } else {
-          setArticles(data.articles);
+          // 依照 publishedAt 由新到舊排序
+            const sortedArticles = data.articles.sort(
+            (a: Article, b: Article) => 
+              new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime()
+            );
+          setArticles(sortedArticles);
           setError(null);
         }
         setLoading(false);
