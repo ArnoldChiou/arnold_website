@@ -5,8 +5,12 @@ import styled from 'styled-components';
 const FooterContainer = styled.footer`
   background-color: #333;
   color: white;
-  padding: 2rem 0;
-  margin-top: auto;
+  padding: 1rem 0; /* 稍微減少 padding */
+  position: fixed; /* 固定定位 */
+  bottom: 0; /* 貼齊底部 */
+  left: 0; /* 貼齊左側 */
+  width: 100%; /* 寬度 100% */
+  z-index: 1000; /* 確保在其他內容之上 */
 `;
 
 const FooterContent = styled.div`

@@ -17,6 +17,26 @@ html, body {
   /* 讓內容從上方開始排列 */
 }
 
+.home-page p {
+  margin-bottom: 20px; /* 在說明文字下方增加間距 */
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-bottom: 30px; /* 在按鈕下方增加間距 */
+  background-color: #007bff; /* 藍色背景 */
+  color: white; /* 白色文字 */
+  text-decoration: none; /* 移除底線 */
+  border-radius: 5px; /* 圓角 */
+  font-size: 1rem;
+  transition: background-color 0.3s ease; /* 平滑過渡效果 */
+}
+
+.cta-button:hover {
+  background-color: #0056b3; /* 滑鼠懸停時變深藍色 */
+}
+
 .full-page-image {
   width: auto;
   height: 30vh;

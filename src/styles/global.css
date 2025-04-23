@@ -49,6 +49,7 @@ body {
   margin: 0 auto;
   padding: 2rem 1rem;
   box-sizing: border-box;
+  padding-bottom: 6rem; /* 增加底部內距，避免被固定 Footer 遮擋 (數值可能需要根據實際 Footer 高度微調) */
 }
 
 /* 連結樣式 */
