@@ -1,0 +1,41 @@
+/* src/styles/components/Footer.css */
+
+.footer-container {
+  background-color: #333;
+  color: white;
+  padding: 1rem 0; /* 稍微減少 padding */
+  position: fixed; /* 固定定位 */
+  bottom: 0; /* 貼齊底部 */
+  left: 0; /* 貼齊左側 */
+  width: 100%; /* 寬度 100% */
+  z-index: 1000; /* 確保在其他內容之上 */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #61dafb;
+}
+
+.footer-copyright {
+  margin: 0;
+  font-size: 0.9rem;
+}
