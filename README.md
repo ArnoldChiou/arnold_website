@@ -128,8 +128,8 @@ export default defineConfig({
 
 如有任何問題或建議，請通過以下方式聯繫：
 
-- Email: [your-email@example.com]
-- GitHub: [your-github-profile]
+- Email: [arrnoldc@gmail.com]
+- GitHub: [[ArnoldChiou](https://github.com/ArnoldChiou)]
 
 ---
 
