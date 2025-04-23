@@ -1,0 +1,21 @@
+.lazy-image {
+  display: block; /* 防止圖片下方出現多餘空間 */
+  /* 可以加入預設背景色或 placeholder 樣式 */
+  background-color: #eee; /* 淺灰色背景作為基本 placeholder */
+  transition: opacity 0.5s ease-in-out; /* 淡入效果 */
+  opacity: 0; /* 初始時透明 */
+  min-height: 50px; /* 避免載入前高度為 0 造成跳動，可依需求調整 */
+}
+
+.lazy-image.loading {
+  /* 載入中可以加上模糊效果 */
+  /* filter: blur(10px); */
+  opacity: 0.5; /* 或者稍微顯示 placeholder */
+}
+
+.lazy-image.loaded {
+  /* 載入完成後移除 placeholder 樣式並完全顯示 */
+  background-color: transparent;
+  /* filter: blur(0); */
+  opacity: 1;
+}

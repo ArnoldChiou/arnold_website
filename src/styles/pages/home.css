@@ -19,7 +19,7 @@ html, body {
 
 .full-page-image {
   width: auto;
-  height: 40vh;
+  height: 30vh;
   max-height: 100vh;
   object-fit: contain;
   display: block;
