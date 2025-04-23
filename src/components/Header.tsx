@@ -55,10 +55,26 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
   };
 
   useEffect(() => {
-    document.body.className = '';
+    if (isMenuOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+
+    // Cleanup function to remove the class when the component unmounts or isMenuOpen changes
+    return () => {
+      document.body.classList.remove('menu-open');
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    document.body.className = ''; // Clear existing classes first
     document.body.classList.add(`theme-${theme}`);
+    if (isMenuOpen) { // Re-apply menu-open if menu is open when theme changes
+        document.body.classList.add('menu-open');
+    }
     localStorage.setItem('theme', theme);
-  }, [theme]);
+  }, [theme, isMenuOpen]); // Add isMenuOpen dependency here
 
   return (
     <header className="site-header">

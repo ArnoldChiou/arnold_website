@@ -148,3 +148,7 @@ body.theme-dark button {
     font-size: 2.5em;
   }
 }
+
+body.menu-open {
+  overflow: hidden;
+}

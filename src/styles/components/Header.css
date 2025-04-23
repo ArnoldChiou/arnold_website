@@ -133,6 +133,10 @@
 }
 
 @media (max-width: 768px) {
+  .header-container {
+    padding: 1rem 0.8rem; /* 減少左右 padding */
+  }
+
   .menu-toggle {
     display: block;
   }
@@ -155,6 +159,9 @@
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+    max-height: calc(100vh - 70px - 2rem); /* 計算最大高度：視窗高度 - 標頭高度 - 上下 padding */
+    overflow-y: auto; /* 當內容超出最大高度時，顯示垂直捲軸 */
+    box-sizing: border-box; /* 確保 padding 包含在高度計算內 */
   }
 
   .main-nav ul {
@@ -165,5 +172,18 @@
   .main-nav a {
     display: block;
     padding: 0.5rem 0;
+  }
+
+  .header-actions {
+    gap: 0.5rem; /* 縮小按鈕之間的間距 */
+  }
+
+  .search-button,
+  .theme-toggle {
+    padding: 0.8rem; /* 減少按鈕 padding */
+  }
+
+  .logo a {
+    font-size: 1.3rem; /* 縮小 Logo 字體大小 */
   }
 }
