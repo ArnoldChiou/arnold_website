@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './styles/global.css';
+import { usePageTitle } from './hooks/usePageTitle'; // Import the hook
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -13,12 +14,18 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const SearchResults = lazy(() => import('./pages/SearchResults'));
 
+// Create a component to wrap Routes and use the hook
+const PageTitleUpdater: React.FC = () => {
+  usePageTitle();
+  return null; // This component doesn't render anything
+};
+
 function App() {
   return (
     <Router>
       <div className="app">
         <Header siteTitle="Arnold Website" />
-        
+        <PageTitleUpdater /> {/* Add the title updater here */}
         <main className="main-content">
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>

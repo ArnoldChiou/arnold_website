@@ -7,7 +7,6 @@ const Contact: React.FC = () => {
 
   return (
     <>
-    <title>Arnold's Portfolio | 聯絡我們</title>
     {/* 使用更有語意的 section 標籤，並加上 padding 等 class */}
     <section className="contact-page container mx-auto px-4 py-8 md:py-12">
       {/* 主要標題，置中或靠左，視整體設計而定 */}

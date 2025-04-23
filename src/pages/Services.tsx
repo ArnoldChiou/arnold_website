@@ -5,8 +5,7 @@ import React from 'react';
 const Services: React.FC = () => {
   return (
     <>
-      {/* 將 Helmet title 替換為標準 title 標籤 */}
-      <title>Arnold's Portfolio | 服務項目</title>
+      {/* Removed <title> tag */}
       {/* <Helmet>
         <title>Arnold's Portfolio | 專業技能</title>
       </Helmet> */}
@@ -18,4 +17,4 @@ const Services: React.FC = () => {
   );
 };
 
-export default Services; 
+export default Services;

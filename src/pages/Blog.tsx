@@ -60,7 +60,6 @@ const Blog: React.FC = () => {
 
   return (
     <>
-      <title>Arnold's Portfolio | AI 新聞</title>
       <div className="blog-page blog-container">
         <h1>AI 新聞</h1>
         <p>最新文章和分享。</p>

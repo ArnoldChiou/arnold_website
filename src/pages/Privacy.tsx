@@ -9,4 +9,4 @@ const Privacy: React.FC = () => {
   );
 };
 
-export default Privacy; 
+export default Privacy;
