@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import React, { Suspense, lazy } from 'react';
 import './styles/global.css';
 
 const Home = lazy(() => import('./pages/Home'));
@@ -11,6 +11,7 @@ const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Blog = lazy(() => import('./pages/Blog'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Privacy = lazy(() => import('./pages/Privacy'));
+const SearchResults = lazy(() => import('./pages/SearchResults'));
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
+              <Route path="/search" element={<SearchResults />} />
             </Routes>
           </Suspense>
         </main>
