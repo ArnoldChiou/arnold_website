@@ -52,6 +52,12 @@ body {
   padding-bottom: 6rem; /* 增加底部內距，避免被固定 Footer 遮擋 (數值可能需要根據實際 Footer 高度微調) */
 }
 
+/* 通用頁面容器樣式 (可選) */
+.page-container {
+  padding-top: 1rem; /* 減少預設 padding，讓 main-content 的 padding 生效 */
+  padding-bottom: 1rem;
+}
+
 /* 連結樣式 */
 a {
   font-weight: 500;

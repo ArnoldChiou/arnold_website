@@ -5,7 +5,7 @@ import '../styles/pages/About.css';
 const About: React.FC = () => {
   return (
     <>
-      <div className="about-page">
+      <div className="about-page page-container">
         <h1>關於我</h1>
         <p>我們是一個專注於提供高質量服務的團隊。</p>
         <section>

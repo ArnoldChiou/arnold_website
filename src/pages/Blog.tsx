@@ -1,62 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import '../styles/pages/Blog.css';
-
-// Define the Article interface
-interface Article {
-  source?: {
-    name?: string;
-  };
-  author?: string;
-  title?: string;
-  description?: string;
-  url?: string;
-  urlToImage?: string;
-  publishedAt?: string;
-  content?: string;
-}
+import React from 'react';
+import '../styles/pages/Blog.css'; // 保留頁面級別的樣式 (例如容器)
+import BlogCard from '../components/BlogCard'; // 引入新的元件
+import { useNewsArticles } from '../hooks/useNewsArticles'; // 引入新的 Hook
 
 const Blog: React.FC = () => {
-  const [articles, setArticles] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const apiKey = import.meta.env.VITE_NEWS_API_KEY;
-        const response = await fetch(
-          `https://newsapi.org/v2/everything?q=AI&apiKey=${apiKey}`
-        );
-        const data = await response.json();
-        if (data.status !== 'ok') {
-          setError(data.message || '無法取得新聞資料');
-          setArticles([]);
-        } else if (!data.articles || !Array.isArray(data.articles)) {
-          setError('新聞資料格式錯誤');
-          setArticles([]);
-        } else {
-          // 依照 publishedAt 由新到舊排序
-            const sortedArticles = data.articles.sort(
-            (a: Article, b: Article) => 
-              new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime()
-            );
-          setArticles(sortedArticles);
-          setError(null);
-        }
-        setLoading(false);
-      } catch (error: any) {
-        console.error('取得新聞時發生錯誤:', error);
-        setError(
-          `取得新聞時發生錯誤: ${
-            error?.message || JSON.stringify(error) || '未知錯誤'
-          }`
-        );
-        setLoading(false);
-      }
-    };
-
-    fetchNews();
-  }, []);
+  const { articles, loading, error } = useNewsArticles(); // 使用 Hook
 
   return (
     <>
@@ -66,40 +14,14 @@ const Blog: React.FC = () => {
         {loading ? (
           <p>載入中...</p>
         ) : error ? (
-          <p style={{ color: 'red' }}>{error}</p>
+          <p className="error-message">{error}</p> /* 使用 class 方便添加樣式 */
+        ) : articles.length === 0 ? (
+          <p>目前沒有新聞。</p> /* 更明確的無資料提示 */
         ) : (
           <ul className="blog-list">
+            {/* 使用 BlogCard 元件 */}
             {articles.map((article, index) => (
-              <li className="blog-card" key={article.url || index}>
-                {article.urlToImage && (
-                  <img
-                    className="blog-image"
-                    src={article.urlToImage}
-                    alt={article.title}
-                  />
-                )}
-                <div className="blog-content">
-                  <a
-                    href={article.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="blog-title"
-                  >
-                    {article.title}
-                  </a>
-                  <p className="blog-description">
-                    {article.description}
-                  </p>
-                  <div className="blog-meta">
-                    {article.source?.name && <span>來源：{article.source.name}</span>}
-                    {article.publishedAt && (
-                      <span style={{ marginLeft: 12 }}>
-                        發佈：{new Date(article.publishedAt).toLocaleString()}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </li>
+              <BlogCard key={article.url || index} article={article} />
             ))}
           </ul>
         )}
