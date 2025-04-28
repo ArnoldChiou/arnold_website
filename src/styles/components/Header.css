@@ -186,4 +186,38 @@
   .logo a {
     font-size: 1.3rem; /* 縮小 Logo 字體大小 */
   }
+
+  body.theme-dark .main-nav {
+    background-color: #222;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Dark theme styles */
+body.theme-dark .site-header {
+  background-color: #222;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+body.theme-dark .logo a,
+body.theme-dark .main-nav a,
+body.theme-dark .search-button,
+body.theme-dark .theme-toggle {
+  color: #eee;
+}
+
+body.theme-dark .logo a:hover,
+body.theme-dark .main-nav a:hover,
+body.theme-dark .search-button:hover,
+body.theme-dark .theme-toggle:hover {
+  color: #00aaff; /* Lighter blue for hover in dark mode */
+}
+
+body.theme-dark .main-nav a::after, 
+body.theme-dark .main-nav Link::after {
+    background-color: #00aaff;
+}
+
+body.theme-dark .menu-toggle span {
+  background-color: #eee; /* Make hamburger icon lines light in dark mode */
 }
