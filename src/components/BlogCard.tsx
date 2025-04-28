@@ -55,7 +55,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
           {article.source?.name && <span>來源：{article.source.name}</span>}
           {article.publishedAt && (
             <span className="published-date">
-              發佈：{new Date(article.publishedAt).toLocaleString()}
+              發佈：{new Date(article.publishedAt).toLocaleString('zh-TW', { hour12: false })}
             </span>
           )}
         </div>

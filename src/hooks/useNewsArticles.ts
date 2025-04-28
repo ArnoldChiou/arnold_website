@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 // 定義 Article 介面 (與 BlogCard 共用，考慮移到 types 資料夾)
 interface Article {
   source?: {
+    id?: string | null;
     name?: string;
   };
   author?: string;
@@ -60,8 +61,13 @@ export const useNewsArticles = (): UseNewsArticlesResult => {
           throw new Error('新聞資料格式錯誤');
         }
 
-        // 依照 publishedAt 由新到舊排序
-        const sortedArticles = data.articles.sort(
+        // 篩選掉來源為 'Wired' 的新聞
+        const filteredArticles = data.articles.filter(
+          (article: Article) => article.source?.name !== 'Wired'
+        );
+
+        // 依照 publishedAt 由新到舊排序篩選後的文章
+        const sortedArticles = filteredArticles.sort(
           (a: Article, b: Article) =>
             new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime()
         );
