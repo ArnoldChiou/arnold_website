@@ -45,4 +45,9 @@ html, body {
   display: block;
   margin: 0;
   padding: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.full-page-image:hover {
+  transform: scale(1.05); /* 滑鼠移入時稍微放大 */
 }
