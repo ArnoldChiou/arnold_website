@@ -12,7 +12,7 @@ const Home: React.FC = () => {
   return (
     <>
       <div className="home-page">
-        <h1>Arnold 的軟體開發作品集</h1> {/* 修改標題 */}
+        <h1>諾秋工作室</h1> {/* 修改標題 */}
         <p>探索我使用 React 和 TypeScript 建構的專案與網頁體驗。</p> {/* 修改說明 */}
         {/* 加入行動呼籲按鈕 */}
         <Link to="/portfolio" className="cta-button">

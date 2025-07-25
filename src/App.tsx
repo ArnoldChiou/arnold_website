@@ -24,7 +24,7 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Header siteTitle="Arnold Website" />
+        <Header siteTitle="諾秋工作室" />
         <PageTitleUpdater /> {/* Add the title updater here */}
         <main className="main-content">
           <Suspense fallback={<div>Loading...</div>}>

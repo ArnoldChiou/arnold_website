@@ -18,15 +18,20 @@
 }
 
 .logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.8rem; /* 稍微加大字體 */
+  font-weight: normal; /* 取消粗體，讓藝術字體更清晰 */
   color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', sans-serif; /* 備用字體 */
 }
 
 .logo a:hover {
   color: #007bff;
+}
+
+.logo-char-fix {
+  font-family: 'Noto Serif SC', sans-serif;
 }
 
 .main-nav ul {

@@ -1,6 +1,6 @@
 // src/config/pageTitles.ts
 
-export const BASE_TITLE = "Arnold's Website";
+export const BASE_TITLE = "諾秋工作室"; // 基礎標題
 
 export const pageTitles: { [key: string]: string } = {
   '/': `${BASE_TITLE} | 首頁`,

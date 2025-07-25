@@ -80,7 +80,15 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
     <header className="site-header">
       <div className="header-container">
         <div className="logo">
-          <Link to="/" onClick={closeMenu}>{siteTitle}</Link>
+          <Link to="/" onClick={closeMenu}>
+            {siteTitle === '諾秋工作室' ? (
+              <>
+                <span className="logo-char-fix">諾</span>秋工作室
+              </>
+            ) : (
+              siteTitle
+            )}
+          </Link>
         </div>
 
         <button

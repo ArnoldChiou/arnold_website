@@ -7,7 +7,7 @@ import { usePageTitle } from '../hooks/usePageTitle'; // 修正：使用具名�
 const projects = [
   {
     id: 1,
-    title: '專案一：響應式網站設計',
+    title: '響應式網站設計',
     description: '為客戶設計並開發了一個現代化的響應式網站，提升了使用者體驗和行動裝置的可訪問性。',
     imageUrl: '/assets/Gemini_Generated_Image_5cv2w85cv2w85cv2.jpg', // 使用 assets 中的範例圖片
     tags: ['React', 'TypeScript', 'CSS Modules'],
@@ -16,10 +16,10 @@ const projects = [
   },
   {
     id: 2,
-    title: '專案二：電子商務平台',
-    description: '建立了一個功能完整的電子商務平台，包含商品管理、購物車和結帳流程。',
-    imageUrl: '/vite.svg', // 使用 public 中的範例圖片
-    tags: ['Next.js', 'Node.js', 'MongoDB'],
+    title: '遊戲網站資料爬蟲與自動化操作',
+    description: '爬取網頁資料並進行自動化操作，實現了高效的數據收集和處理流程。',
+    imageUrl: '/project2.png', // 使用 public 中的範例圖片
+    tags: ['python', 'javascript', 'selenium'],
     liveUrl: '#',
   },
   // 可以加入更多專案...
