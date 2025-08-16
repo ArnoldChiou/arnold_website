@@ -6,8 +6,7 @@
 
 .portfolio-page > p {
   margin-bottom: 30px;
-  /* color: #555; */ /* 原本的深灰色 */
-  color: #f0f0f0; /* 改為淺灰色，提高對比度 */
+  color: var(--text-color); /* 使用 CSS 變數 */
   font-size: 1.1em;
 }
 

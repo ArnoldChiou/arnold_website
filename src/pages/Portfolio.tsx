@@ -9,10 +9,9 @@ const projects = [
     id: 1,
     title: '響應式網站設計',
     description: '為客戶設計並開發了一個現代化的響應式網站，提升了使用者體驗和行動裝置的可訪問性。',
-    imageUrl: '/assets/Gemini_Generated_Image_5cv2w85cv2w85cv2.jpg', // 使用 assets 中的範例圖片
+    imageUrl: '/RWD.png', // 使用 assets 中的範例圖片
     tags: ['React', 'TypeScript', 'CSS Modules'],
-    liveUrl: '#', // 替換成實際連結
-    repoUrl: '#', // 替換成實際連結
+    liveUrl: 'https://www.hiyori.com.tw/', // 替換成實際連結
   },
   {
     id: 2,
@@ -20,7 +19,14 @@ const projects = [
     description: '爬取網頁資料並進行自動化操作，實現了高效的數據收集和處理流程。',
     imageUrl: '/project2.png', // 使用 public 中的範例圖片
     tags: ['python', 'javascript', 'selenium'],
-    liveUrl: '#',
+    liveUrl: 'https://github.com/ArnoldChiou/simcompany_AutoTrader',
+  },
+  {
+    id: 3,
+    title: 'FoodPanda 菜單專案',
+    description: '透過AI工具協助商家在 foodpanda 平台上管理菜單與自行替換菜單圖片與文字',
+    imageUrl: '/FoodPanda.png', // 請替換成您的專案圖片
+    tags: ['Gemini AI', 'Google Cloud Vision', 'Python'],
   },
   // 可以加入更多專案...
 ];
@@ -42,7 +48,6 @@ const Portfolio: React.FC = () => {
             imageUrl={project.imageUrl}
             tags={project.tags}
             liveUrl={project.liveUrl}
-            repoUrl={project.repoUrl}
           />
         ))}
       </div>
