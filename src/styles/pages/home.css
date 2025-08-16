@@ -1,53 +1,192 @@
-html, body {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  overflow: auto;
-}
+/* 移除舊的全域樣式，因為 global.css 已處理 */
 
-.home-page {
-  width: auto;
-  height: auto;
-  margin: 0;
-  padding: 0;
+.home-page-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  /* 讓內容從上方開始排列 */
+  gap: 4rem; /* 增加區塊之間的間距 */
+  padding-bottom: 4rem; /* 增加頁面底部的空間 */
 }
 
-.home-page p {
-  margin-bottom: 20px; /* 在說明文字下方增加間距 */
+/* 共用區塊標題 */
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
+/* 1. Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 4rem 1rem;
+  width: 100%;
+  background-color: var(--background-color-soft, #f8f9fa); /* 使用變數以支援深色模式 */
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-color-secondary, #6c757d);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* 在小螢幕上換行 */
+}
+
+/* 行動呼籲按鈕 (舊樣式升級) */
 .cta-button {
   display: inline-block;
-  padding: 12px 24px;
-  margin-bottom: 30px; /* 在按鈕下方增加間距 */
-  background-color: #007bff; /* 藍色背景 */
-  color: white; /* 白色文字 */
-  text-decoration: none; /* 移除底線 */
-  border-radius: 5px; /* 圓角 */
+  padding: 12px 28px;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: background-color 0.3s ease; /* 平滑過渡效果 */
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
-.cta-button:hover {
-  background-color: #0056b3; /* 滑鼠懸停時變深藍色 */
+.cta-button.primary {
+  background-color: #007bff;
+  color: white;
 }
 
-.full-page-image {
-  width: auto;
-  height: 30vh;
-  max-height: 100vh;
-  object-fit: contain;
-  display: block;
-  margin: 0;
-  padding: 0;
-  transition: transform 0.3s ease-in-out;
+.cta-button.primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
-.full-page-image:hover {
-  transform: scale(1.05); /* 滑鼠移入時稍微放大 */
+.cta-button.secondary {
+  background-color: transparent;
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.cta-button.secondary:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+
+/* 2. Services Section */
+.services-section {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 8px;
+  background-color: var(--background-color, #ffffff);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-description {
+  color: var(--text-color-secondary, #6c757d);
+}
+
+.section-link-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.section-link {
+  font-weight: 600;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.section-link:hover {
+  text-decoration: underline;
+}
+
+/* 3. Portfolio Showcase */
+.portfolio-showcase {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* 複用 Portfolio 頁面的網格樣式 */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 深色模式調整 */
+body.theme-dark .hero-section {
+  background-color: #2a2a2a;
+}
+body.theme-dark .service-card {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+body.theme-dark .cta-button.secondary {
+  color: #87ceeb;
+  border-color: #87ceeb;
+}
+body.theme-dark .cta-button.secondary:hover {
+  background-color: #87ceeb;
+  color: #1a1a1a;
+}
+body.theme-dark .service-icon,
+body.theme-dark .section-link {
+  color: #87ceeb;
+}
+
+/* RWD for mobile */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
 }
